@@ -10,5 +10,18 @@ public class Task02Main {
         // - запустить программу
         // - и сравнить получившийся файл output.test с src/test/resources/expected.test
         // то же самое делает тест main_testFiles
+
+        int prev = System.in.read();
+        while (prev != -1) {
+            int next = System.in.read();
+            if (prev == 13 && next == 10) {
+                prev = next;
+            } else {
+                System.out.write(prev);
+                prev = next;
+            }
+        }
+
+        System.out.flush();
     }
 }
